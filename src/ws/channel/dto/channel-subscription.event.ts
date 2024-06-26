@@ -1,5 +1,5 @@
 export interface ChannelSubscriptionEvent {
-  users_ids: number[]
+  user_ids: number[]
   username: string
   channel_id: number
 }
