@@ -1,6 +1,12 @@
 import { BaseEndpoint } from '../endpoint.base'
 // eslint-disable-next-line ts/consistent-type-imports
-import { ChannelInstance, ChatroomSettingsInstance, LeaderboardInstance, LivestreamInstance, PollInstance } from './instance'
+import {
+  ChannelInstance,
+  ChatroomSettingsInstance,
+  LeaderboardInstance,
+  LivestreamInstance,
+  PollInstance,
+} from './instance'
 import { KientApiError } from '@/errors'
 import { createInstance } from '@/utils/create-instance'
 
@@ -9,7 +15,7 @@ import { createInstance } from '@/utils/create-instance'
  */
 export class ChannelEndpoint extends BaseEndpoint {
   public async getChannel(channel: string) {
-    const response = await this._apiClient.callKickApi({ endpoint: `api/v2/channels/${channel}` })
+    const response = await this._apiClient.callKickApi({ endpoint: `api/v1/channels/${channel}` })
     if (response.status !== 200)
       throw new KientApiError('Failed to get channel information', { cause: response })
 
