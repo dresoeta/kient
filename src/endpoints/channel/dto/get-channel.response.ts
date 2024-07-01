@@ -134,29 +134,26 @@ export interface GetChannelResponse {
 }
 
 export interface PreviousLivestreams {
-  id: number
-  slug: string
-  channel_id: number
-  created_at: string
-  session_title: string
-  duration: number
-  viewer_count: number
-  thumbnail: {
-    src: string
-    srcset: string
+  id?: number | null | undefined
+  slug?: string | null | undefined
+  channel_id?: number | null | undefined
+  created_at?: string | null | undefined
+  session_title?: string | null | undefined
+  duration?: number | null | undefined
+  viewer_count?: number | null | undefined
+  thumbnail?: {
+    src?: string | null | undefined
+    srcset?: string | null | undefined
   }
-  views: number
-  video: {
-    id: number
-    live_stream_id: number
-    slug: string | null
-    thumb: string | null
-    s3: string | null
-    trading_platform_id: number | null
-    created_at: string
-    updated_at: string
-    uuid: string
-    views: number
-    deleted_at: string | null
+  views?: number | null | undefined
+  video?: {
+    id?: number | null | undefined
+    live_stream_id?: number | null | undefined
+    slug?: string | null | undefined
+    created_at?: string | null | undefined
+    updated_at?: string | null | undefined
+    uuid?: string | null | undefined
+    views?: number | null | undefined
+    deleted_at?: string | null | undefined
   }
 }
