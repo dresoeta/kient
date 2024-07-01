@@ -58,6 +58,7 @@ export interface GetChannelResponse {
   slug: string
   is_banned: boolean
   playback_url?: string
+  previous_livestreams: PreviousLivestreams[]
   vod_enabled: boolean
   subscription_enabled: boolean
   followers_count: number
@@ -130,4 +131,32 @@ export interface GetChannelResponse {
     order: number
     title: string
   }>
+}
+
+export interface PreviousLivestreams {
+  id: number
+  slug: string
+  channel_id: number
+  created_at: string
+  session_title: string
+  duration: number
+  viewer_count: number
+  thumbnail: {
+    src: string
+    srcset: string
+  }
+  views: number
+  video: {
+    id: number
+    live_stream_id: number
+    slug: string | null
+    thumb: string | null
+    s3: string | null
+    trading_platform_id: number | null
+    created_at: string
+    updated_at: string
+    uuid: string
+    views: number
+    deleted_at: string | null
+  }
 }
