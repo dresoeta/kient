@@ -52,13 +52,15 @@ export interface ChannelLivestream {
   tags: unknown[]
 }
 
+export interface GetChannelResponseV1 {
+  previous_livestreams: PreviousLivestreams[]
+}
 export interface GetChannelResponse {
   id: number
   user_id: number
   slug: string
   is_banned: boolean
   playback_url?: string
-  previous_livestreams: PreviousLivestreams[]
   vod_enabled: boolean
   subscription_enabled: boolean
   followers_count: number
