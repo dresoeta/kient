@@ -52,7 +52,7 @@ export interface ChannelLivestream {
   tags: unknown[]
 }
 
-export interface GetChannelResponseV1 {
+export interface LatestLivestreams {
   previous_livestreams: PreviousLivestreams[]
 }
 export interface GetChannelResponse {

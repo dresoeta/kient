@@ -2,8 +2,8 @@ import { BaseEndpoint } from '../endpoint.base'
 // eslint-disable-next-line ts/consistent-type-imports
 import {
   ChannelInstance,
-  ChannelInstanceV1,
   ChatroomSettingsInstance,
+  LatestLivestreamsInstance,
   LeaderboardInstance,
   LivestreamInstance,
   PollInstance,
@@ -32,7 +32,7 @@ export class ChannelEndpoint extends BaseEndpoint {
     if (response.status !== 200)
       throw new KientApiError('Failed to get channel information', { cause: response })
 
-    const channelInstance = createInstance<ChannelInstanceV1>({
+    const channelInstance = createInstance<LatestLivestreamsInstance>({
       data: response.body,
       _client: this._client,
     })
