@@ -1,5 +1,5 @@
 // eslint-disable-next-line ts/consistent-type-imports
-import { GetChannelResponse, LatestLivestreams } from '../dto/get-channel.response'
+import { Clips, GetChannelResponse, LatestLivestreams } from '../dto/get-channel.response'
 import { BaseInstance } from '@/core/instance.base'
 
 /**
@@ -32,3 +32,4 @@ export class ChannelInstance extends BaseInstance<GetChannelResponse> {
 }
 
 export class LatestLivestreamsInstance extends BaseInstance<LatestLivestreams> {}
+export class ClipsInstance extends BaseInstance<Clips> {}

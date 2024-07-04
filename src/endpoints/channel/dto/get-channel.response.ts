@@ -55,6 +55,47 @@ export interface ChannelLivestream {
 export interface LatestLivestreams {
   previous_livestreams: PreviousLivestreams[]
 }
+
+export interface Clips {
+  clips: Clip[]
+}
+
+export interface Clip {
+  id: string
+  category: {
+    id: number
+    name: string
+    slug: string
+  }
+  category_id: string
+  channel: {
+    id: number
+    username: string
+    slug: string
+  }
+  channel_id: number
+  clip_url: string
+  created_at: string
+  creator: {
+    id: number
+    username: string
+    slug: string
+  }
+  duration: number
+  is_mature: boolean
+  liked: boolean
+  likes: number
+  likes_count: number
+  livestream_id: string
+  privacy: string
+  started_at: string
+  thumbnail_url: string
+  title: string
+  user_id: number
+  video_url: string
+  view_count: number
+  views: number
+}
 export interface GetChannelResponse {
   id: number
   user_id: number

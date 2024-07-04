@@ -3,6 +3,7 @@ import { BaseEndpoint } from '../endpoint.base'
 import {
   ChannelInstance,
   ChatroomSettingsInstance,
+  ClipsInstance,
   LatestLivestreamsInstance,
   LeaderboardInstance,
   LivestreamInstance,
@@ -33,6 +34,18 @@ export class ChannelEndpoint extends BaseEndpoint {
       throw new KientApiError('Failed to get channel information', { cause: response })
 
     const channelInstance = createInstance<LatestLivestreamsInstance>({
+      data: response.body,
+      _client: this._client,
+    })
+    return channelInstance
+  }
+
+  public async getClips(channel: string) {
+    const response = await this._apiClient.callKickApi({ endpoint: `api/v2/channels/${channel}/clips?cursor=0&sort=date&time=all` })
+    if (response.status !== 200)
+      throw new KientApiError('Failed to get channel information', { cause: response })
+
+    const channelInstance = createInstance<ClipsInstance>({
       data: response.body,
       _client: this._client,
     })
