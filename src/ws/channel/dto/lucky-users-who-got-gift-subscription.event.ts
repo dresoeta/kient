@@ -16,7 +16,7 @@ export interface LuckyUsersWhoGotGiftSubscriptionsEvent {
       chat_mode_old: string
       chat_mode: string
       slow_mode: boolean
-      chatablle_id: number
+      chatable_id: number
       followers_mode: boolean
       subscribers_mode: boolean
       emotes_mode: boolean
